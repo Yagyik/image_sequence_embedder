@@ -1,0 +1,18 @@
+image_sequence_autoencoder/
+├── configs/
+│   └── vae_lstm.yml
+├── data/
+│   └── dataloader.py
+├── logging/
+│   └── tensorboard_logger.py
+├── models/
+│   ├── image_encoder_decoder.py
+│   ├── lstm_encoder_decoder.py
+│   └── vae_latent.py
+├── training/
+│   ├── losses.py
+│   ├── trainer.py
+│   └── utils.py
+├── generate.py
+├── train.py
+└── visualize_latents.py

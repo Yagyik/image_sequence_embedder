@@ -1,0 +1,26 @@
+model:
+  nc: 1  # Number of input channels (grayscale)
+  ngf: 128  # Generator filters for decoder
+  ndf: 128  # Discriminator filters for encoder
+  latent_dim: 128  # Latent space dimensionality
+  imsize: 64  # Image size (64x64)
+  batchnorm: true  # Use BatchNorm
+
+training:
+  batch_size: 32
+  learning_rate: 0.001
+  kl_warmup_epochs: 100  # KL warmup duration
+  max_epochs: 200
+  teacher_forcing: true  # Use teacher forcing in LSTM decoder
+  kl_annealing: linear  # KL annealing schedule
+
+data:
+  dataset_path: "data/fluorescence_sequences.npy"  # Update to actual dataset path
+  augment_flip: true  # Flip entire sequences
+  augment_jitter: true  # Add jitter to sequences
+  normalize: true  # Normalize inputs to [0, 1]
+
+logging:
+  tensorboard: true  # Enable TensorBoard logging
+  log_dir: "logs/"
+  log_frequency: 10  # Log every N epochs
